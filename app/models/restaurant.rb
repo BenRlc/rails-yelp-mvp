@@ -3,4 +3,5 @@ class Restaurant < ApplicationRecord
   validates :category, inclusion: { in: ['chinese', 'italian', 'japanese', 'french', 'belgian'],
                                     message: '%{value} is not a valid category' }, presence: true
   validates :address, presence: true
+  has_many :reviews, :dependent => :destroy
 end
